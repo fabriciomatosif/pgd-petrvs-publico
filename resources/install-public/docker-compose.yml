@@ -14,6 +14,8 @@ services:
   petrvs_php:
     image: segescginf/pgdpetrvs:latest  # Substitua pela sua imagem real
     container_name: petrvs_php
+    environment:
+      - TZ=America/Sao_Paulo
     ports:
       - "800:80"
       - "8443:443"
