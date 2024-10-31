@@ -12,7 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: rootpgd   # Define a senha para o root
       TZ: America/Sao_Paulo
   petrvs_php:
-    image: segescginf/pgdpetrvs:latest  # Substitua pela sua imagem real
+    image: segescginf/pgdpetrvs:2.3.1  # Substitua pela sua imagem real
     container_name: petrvs_php
     environment:
       - TZ=America/Sao_Paulo
@@ -28,7 +28,7 @@ services:
       # - "./.env:/var/www/.env"
       # - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
   petrvs_queue:
-    image: segescginf/pgdpetrvs:latest
+    image: segescginf/pgdpetrvs:2.3.1
     container_name: petrvs_queue
     environment:
       - TZ=America/Sao_Paulo
