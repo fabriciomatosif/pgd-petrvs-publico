@@ -24,7 +24,7 @@ services:
         limits:
           cpus: '2.0'
           memory: 4048M
-    volumes:
+    # volumes:
       # - "./.env:/var/www/.env"
       # - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
   petrvs_queue:
@@ -35,7 +35,7 @@ services:
     command: ["/bin/bash", "-c", "mkdir -p /var/www/storage/logs && chown -R www-data:www-data /var/www/storage && chmod -R 775 /var/www/storage && supervisord -c /etc/supervisor/conf.d/horizon.conf"]
     depends_on:
       - petrvs_php
-    volumes:
+    # volumes:
       # - "./.env:/var/www/.env"
       # - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
     stdin_open: true
