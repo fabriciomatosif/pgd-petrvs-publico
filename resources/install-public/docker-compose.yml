@@ -6,7 +6,7 @@ services:
     ports:
       - "8306:3306"
     volumes:
-      - ./db_data:/var/lib/mysql      # Define um volume persistente para os dados do MariaDB
+      - ../../db_data:/var/lib/mysql      # Define um volume persistente para os dados do MariaDB
       # - ./my.cnf:/etc/mysql/my.cnf  # Certifique-se que este arquivo está corretamente configurado
     environment:
       MYSQL_ROOT_PASSWORD: rootpgd   # Define a senha para o root
