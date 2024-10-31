@@ -25,7 +25,7 @@ services:
           cpus: '2.0'
           memory: 4048M
     volumes:
-      - "./.env:/var/www/.env"
+      # - "./.env:/var/www/.env"
       # - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
   petrvs_queue:
     image: segescginf/pgdpetrvs:latest
@@ -36,7 +36,7 @@ services:
     depends_on:
       - petrvs_php
     volumes:
-      - "./.env:/var/www/.env"
+      # - "./.env:/var/www/.env"
       # - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
     stdin_open: true
     tty: true
