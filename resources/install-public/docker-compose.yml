@@ -2,7 +2,7 @@ version: "3.9"
 services:
   mariadb:
     image: mariadb:latest
-    # container_name: petrvs_db
+    container_name: petrvs_db
     ports:
       - "23306:3306"
     volumes:
@@ -12,7 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: rootpgd   # Define a senha para o root
   petrvs_php:
     image: segescginf/pgdpetrvs:latest  # Substitua pela sua imagem real
-    # container_name: petrvs_php
+    container_name: petrvs_php
     ports:
       - "280:80"
       - "2443:443"
@@ -26,7 +26,7 @@ services:
       - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
   petrvs_queue:
     image: segescginf/pgdpetrvs:latest
-    # container_name: petrvs_queue
+    container_name: petrvs_queue
     environment:
       - TZ=America/Bahia
     command: ["/bin/bash", "-c", "mkdir -p /var/www/storage/logs && chown -R www-data:www-data /var/www/storage && chmod -R 775 /var/www/storage && supervisord -c /etc/supervisor/conf.d/horizon.conf"]
