@@ -42,7 +42,7 @@ services:
     image: redis:alpine
     # container_name: petrvs_redis
     ports:
-      - "46379:6379"
+      - "6379:6379"
     volumes:
       - redis-data:/data
 volumes:
