@@ -4,7 +4,7 @@ services:
     image: mariadb:latest
     # container_name: petrvs_db
     ports:
-      - "2306:3306"
+      - "1306:3306"
     volumes:
       - db_data:/var/lib/mysql      # Define um volume persistente para os dados do MariaDB
       - ./my.cnf:/etc/mysql/my.cnf  # Certifique-se que este arquivo está corretamente configurado
@@ -18,8 +18,8 @@ services:
     environment:
       TZ: America/Sao_Paulo
     ports:
-      - "280:80"
-      - "2443:443"
+      - "180:80"
+      - "1443:443"
     deploy:
       resources:
         limits:
@@ -48,7 +48,7 @@ services:
     environment:
       TZ: America/Sao_Paulo
     ports:
-      - "26379:6379"
+      - "16379:6379"
     volumes:
       - redis-data:/data
 volumes:
