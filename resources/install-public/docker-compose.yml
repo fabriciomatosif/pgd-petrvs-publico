@@ -15,6 +15,8 @@ services:
     # image: segescginf/pgdpetrvs:latest  # Substitua pela sua imagem real
     image: segescginf/pgdpetrvs:2.3.11 
     # container_name: petrvs_php
+    environment:
+      TZ: America/Sao_Paulo
     ports:
       - "480:80"
       - "4443:443"
@@ -43,6 +45,8 @@ services:
   petrvs_redis:
     image: redis:alpine
     # container_name: petrvs_redis
+    environment:
+      TZ: America/Sao_Paulo
     ports:
       - "46379:6379"
     volumes:
