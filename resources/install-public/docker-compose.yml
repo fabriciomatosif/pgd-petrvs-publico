@@ -16,7 +16,7 @@ services:
     image: segescginf/pgdpetrvs:2.3.14
     # container_name: petrvs_php
     ports:
-      - "80:80"
+      - "180:80"
       - "1443:443"
     deploy:
       resources:
