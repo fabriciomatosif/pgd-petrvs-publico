@@ -1,4 +1,7 @@
 
+## 2.9.12 29/01/2026
+### Corrigido
+- Corrigido bug na carga de gestores do SIAPE
 ## 2.9.11 28/01/2026
 ### Corrigido
 - Corrigido bug na carga de gestores do SIAPE
