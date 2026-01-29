@@ -14,6 +14,7 @@ use App\Services\Siape\Contrato\InterfaceIntegracao;
 use App\Services\Siape\Unidade\Atribuicao;
 use App\Services\UnidadeIntegranteService;
 use App\Facades\SiapeLog;
+use App\Models\UnidadeIntegrante;
 
 class Integracao implements InterfaceIntegracao
 {
