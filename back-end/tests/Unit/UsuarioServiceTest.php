@@ -62,11 +62,11 @@ class UsuarioServiceTest extends TestCase
         // Instancia o service e injeta o mock
         $this->service = new UsuarioService();
         
-        // Injeção via Reflection já que a propriedade é protected
-        $reflection = new \ReflectionClass($this->service);
-        $property = $reflection->getProperty('integracaoService');
+        // Injeção via Reflection na propriedade _services da classe pai ServiceBase
+        $reflection = new \ReflectionClass(\App\Services\ServiceBase::class);
+        $property = $reflection->getProperty('_services');
         $property->setAccessible(true);
-        $property->setValue($this->service, $this->integracaoServiceMock);
+        $property->setValue($this->service, ['integracaoService' => $this->integracaoServiceMock]);
     }
 
     protected function tearDown(): void
@@ -120,10 +120,10 @@ class UsuarioServiceTest extends TestCase
         $this->service = Mockery::mock(UsuarioService::class)->makePartial();
         
         // Re-injeta o mock do integracaoService
-        $reflection = new \ReflectionClass(UsuarioService::class);
-        $property = $reflection->getProperty('integracaoService');
+        $reflection = new \ReflectionClass(\App\Services\ServiceBase::class);
+        $property = $reflection->getProperty('_services');
         $property->setAccessible(true);
-        $property->setValue($this->service, $this->integracaoServiceMock);
+        $property->setValue($this->service, ['integracaoService' => $this->integracaoServiceMock]);
         
         // Acessa o método validateStore diretamente se possível, ou via proxyStore que o chama?
         // ServiceBase usa __call para métodos mágicos?
