@@ -88,7 +88,6 @@ class ServiceBase extends DynamicMethods
     return class_exists($fullName) ? $this->_services[$name] : null;
   }
 
-
   public function __construct($collection = null)
   {
     $this->collection = $collection ?? $this->collection;
